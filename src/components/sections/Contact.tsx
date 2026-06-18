@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, Globe, Send } from "lucide-react";
+import { Mail, Phone, Globe } from "lucide-react";
 
 // LinkedIn SVG — lucide-react version in this project doesn't export Linkedin
 function LinkedinIcon({ size = 18, className = "" }: { size?: number; className?: string }) {

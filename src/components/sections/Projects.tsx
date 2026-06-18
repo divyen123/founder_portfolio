@@ -278,7 +278,7 @@ export default function Projects() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {researchProjects.map((proj, i) => {
             const Icon = proj.icon;
-            const isPremium = (proj as any).premium;
+            const isPremium = (proj as { premium?: boolean }).premium;
             return (
               <motion.div
                 key={proj.id}
