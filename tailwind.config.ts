@@ -9,8 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        aerospace: {
+          dark: "#050816",
+          blue: "#0B1120",
+          neon: "#00BFFF",
+          cyan: "#00FFFF",
+          purple: "#8B5CF6",
+          gold: "#FFD700",
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
       },
     },
   },
