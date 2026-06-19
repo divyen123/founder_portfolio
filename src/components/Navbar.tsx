@@ -18,11 +18,43 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = ["home", "about", "projects", "achievements", "journey", "education", "contact"];
+    const observerOptions = {
+      root: null,
+      rootMargin: "-30% 0px -60% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer.unobserve(element);
+      });
+    };
   }, []);
 
   return (
@@ -53,16 +85,28 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[11px] font-medium text-gray-400 hover:text-aerospace-neon transition-colors duration-300 uppercase tracking-[0.2em] relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-aerospace-neon group-hover:w-full transition-all duration-300" />
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const sectionId = link.href.substring(1);
+            const isActive = activeSection === sectionId;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-[11px] font-medium transition-colors duration-300 uppercase tracking-[0.2em] relative py-1 ${
+                  isActive ? "text-aerospace-neon" : "text-gray-400 hover:text-aerospace-neon"
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <motion.span
+                    layoutId="activeNavUnderline"
+                    className="absolute bottom-0 left-0 right-0 h-px bg-aerospace-neon"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile hamburger */}
@@ -84,16 +128,22 @@ export default function Navbar() {
           className="lg:hidden glassmorphism border-t border-white/5"
         >
           <div className="flex flex-col items-center py-6 gap-5">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-gray-300 hover:text-aerospace-neon uppercase tracking-[0.25em] transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const sectionId = link.href.substring(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm font-medium uppercase tracking-[0.25em] transition-colors ${
+                    isActive ? "text-aerospace-neon" : "text-gray-300 hover:text-aerospace-neon"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
         </motion.div>
       )}
