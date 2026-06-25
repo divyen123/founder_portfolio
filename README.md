@@ -6,7 +6,7 @@
 
 A premium, cinematic portfolio showcasing aerospace innovation, UAV systems, and deep-tech engineering — built with cutting-edge web technologies.
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-raghav--portfolio--steel.vercel.app-00BFFF?style=for-the-badge)](https://raghav-portfolio-steel.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-founder--portfolio--steel.vercel.app-00BFFF?style=for-the-badge)](https://founder-portfolio-steel.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
@@ -88,10 +88,10 @@ portfolio/
 
 ```bash
 # Clone the repository
-git clone https://github.com/divyen123/Raghav_portfolio.git
+git clone https://github.com/divyen123/founder_portfolio.git
 
 # Navigate to the project
-cd Raghav_portfolio
+cd founder_portfolio
 
 # Install dependencies
 npm install
