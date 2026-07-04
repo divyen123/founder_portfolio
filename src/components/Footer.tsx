@@ -42,7 +42,7 @@ export default function Footer() {
         {/* Social / comms */}
         <div className="flex gap-4 mb-12">
           <a
-            href="mailto:raghavsaravanan22@mail.com"
+            href="mailto:raghav@ragasgroups.com"
             className="w-12 h-12 rounded-full bg-white/[0.04] border border-white/8 flex items-center justify-center text-gray-400 hover:text-aerospace-neon hover:border-aerospace-neon hover:scale-110 transition-all duration-300"
             aria-label="Email"
           >
