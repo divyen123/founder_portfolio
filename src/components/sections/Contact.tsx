@@ -33,8 +33,8 @@ const contactCards = [
   {
     icon: LinkedinIcon,
     label: "LinkedIn",
-    value: "raghav-s-31427532a",
-    href: "https://www.linkedin.com/in/raghav-s-31427532a/",
+    value: "raghavx23",
+    href: "https://www.linkedin.com/in/raghavx23",
     color: "purple",
   },
   {
