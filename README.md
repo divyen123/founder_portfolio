@@ -76,6 +76,21 @@ portfolio/
 
 ```
 
+---
+
+## 🚀 Deployment
+
+This portfolio is deployed on **Vercel** with automatic CI/CD. Every push to the `main` branch on GitHub triggers a new production build and deployment automatically.
+
+- **Platform**: [Vercel](https://vercel.com)
+- **Custom Domain**: [founder.ragasgroups.com](https://founder.ragasgroups.com/)
+- **GitHub Repository**: [divyen123/founder_portfolio](https://github.com/divyen123/founder_portfolio)
+- **Build System**: Next.js static site generation for optimized performance
+- **CDN**: Vercel Edge Network for global low-latency delivery
+
+---
+
+
 ## 📸 Sections Overview
 
 | # | Section | Description |
