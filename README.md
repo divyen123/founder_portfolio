@@ -73,43 +73,8 @@ portfolio/
 ├── tailwind.config.ts
 ├── next.config.mjs
 └── tsconfig.json
+
 ```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm / yarn / pnpm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/divyen123/founder_portfolio.git
-
-# Navigate to the project
-cd founder_portfolio
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the portfolio locally.
-
-### Build for Production
-
-```bash
-npm run build
-npm start
-```
-
----
 
 ## 📸 Sections Overview
 
